@@ -100,6 +100,27 @@ Okay now try to run Gazebo inside the Singularity:
 gazebo
 ```
 
+If Gazebo works for you, you can go to the next session :-)
+
+If you have the following error we need to update the graphics drivers inside the Singuliarty container.
+```
+X Error of failed request:  BadAlloc (insufficient resources for operation)
+  Major opcode of failed request:  149 ()
+  Minor opcode of failed request:  2
+  Serial number of failed request:  35
+  Current serial number in output stream:  36 
+```
+
+To update the drivers:
+```
+apt update
+apt install software-properties-common
+add-apt-repository ppa:kisak/kisak-mesa -y
+apt update
+apt upgrade -y
+```
+
+
 
 
 
