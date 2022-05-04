@@ -117,6 +117,7 @@ apt install software-properties-common
 add-apt-repository ppa:kisak/kisak-mesa -y
 apt update
 apt upgrade -y
+apt --fix-broken install
 ```
 
 
