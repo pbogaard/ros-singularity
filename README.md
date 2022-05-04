@@ -129,7 +129,7 @@ To access your SSH key:
 $ gedit ~/.ssh/id_rsa.pub
 ```
 
-If this file does not exist, generate an SSH key with `ssh-keygen`, and just press `enter` a few times.
+If this file does not exist, generate an SSH key with `ssh-keygen`, and just press `enter` a few times. Then add it with `ssh-add`.
 
 Copy the whole key:
 ```
