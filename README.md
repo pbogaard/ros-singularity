@@ -161,9 +161,58 @@ Now import the dependencies using the `vcstool`
 $ vcs import --input cor_mdp_tiago/cor_mdp_tiago.rosinstall .
 ```
 
-Now use `rosdep` to install the other dependencies from inside the singularity.
+Next we use `rosdep` to install the other dependencies from inside the singularity.
 
+However the current Singularity container does not have access to our workspace. Exit the running Singuliarty container with `Ctrl + D`.
 
+Now restart it with this command:  (don't forget to replace your username)
+```
+$ sudo singularity shell -B /home/pepijn/:/home/ -w melodic/
+```
+
+And activate the ROS environment
+```
+source /opt/ros/melodic/setup.bash
+```
+
+Now inside the Singularity we go to the mdp folder:
+```
+Singularity> cd /home/mdp
+```
+
+And use `rosdep` to install the other dependencies:
+```
+Singularity> rosdep update
+rosdep install --from-paths src --ignore-src --rosdistro melodic -y --skip-keys="opencv2 opencv2-nonfree pal_laser_filters speed_limit_node sensor_to_cloud hokuyo_node libdw-dev python-graphitesend-pip python-statsd pal_filters pal_vo_server pal_usb_utils pal_pcl pal_pcl_points_throttle_and_filter pal_karto pal_local_joint_control camera_calibration_files pal_startup_msgs pal-orbbec-openni2 dummy_actuators_manager pal_local_planner gravity_compensation_controller current_limit_controller dynamic_footprint dynamixel_cpp tf_lookup opencv3 joint_impedance_trajectory_controller"
+```
+
+Before we can use the `catkin` command we need to install it:
+```
+apt install python3-catkin-tools
+```
+
+And let's also install Numpy:
+```
+apt install python3-numpy
+```
+
+Finally we can build the Tiago workspace:
+```
+catkin build
+```
+
+And activate it
+```
+source devel/setup.bash
+```
+
+To your project
+```
+roslaunch cor_mdp_tiago_gazebo tiago_ahold.launch # Ahold
+roslaunch cor_mdp_tiago_gazebo tiago_festo.launch # Festo
+```
+
+You are done!
 
 
 
