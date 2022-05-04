@@ -113,7 +113,6 @@ X Error of failed request:  BadAlloc (insufficient resources for operation)
 
 To update the drivers:
 ```
-apt update
 apt install software-properties-common
 add-apt-repository ppa:kisak/kisak-mesa -y
 apt update
