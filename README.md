@@ -1,4 +1,7 @@
 # How to run ROS Melodic on Ubuntu 20/21/22 with Singularity
+- `$` before a command means to run in it in a normal terminal
+- `Singularity>` before a command means to run it inside the singularity container
+
 
 ## Install Singularity
 We will download the source code, compile it and then install Singularity.
