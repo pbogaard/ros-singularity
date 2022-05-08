@@ -217,6 +217,10 @@ Singularity> roslaunch cor_mdp_tiago_gazebo tiago_festo.launch # Festo
 
 You are done!
 
+## References
+- https://singularity-tutorial.github.io/01-installation/
+- https://blog.sravjti.in/2020/12/11/singularity-ros-melodic.html
+
 
 
 
