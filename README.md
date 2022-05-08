@@ -175,7 +175,7 @@ $ sudo singularity shell -B /home/pepijn/:/home/ -w melodic/
 
 And activate the ROS environment
 ```
-source /opt/ros/melodic/setup.bash
+Singularity> source /opt/ros/melodic/setup.bash
 ```
 
 Now inside the Singularity we go to the mdp folder:
@@ -191,28 +191,28 @@ rosdep install --from-paths src --ignore-src --rosdistro melodic -y --skip-keys=
 
 Before we can use the `catkin` command we need to install it:
 ```
-apt install python3-catkin-tools
+Singularity> apt install python3-catkin-tools
 ```
 
 And let's also install Numpy:
 ```
-apt install python3-numpy
+Singularity> apt install python3-numpy
 ```
 
 Finally we can build the Tiago workspace:
 ```
-catkin build
+Singularity> catkin build
 ```
 
 And activate it
 ```
-source devel/setup.bash
+Singularity> source devel/setup.bash
 ```
 
 To your project
 ```
-roslaunch cor_mdp_tiago_gazebo tiago_ahold.launch # Ahold
-roslaunch cor_mdp_tiago_gazebo tiago_festo.launch # Festo
+Singularity> roslaunch cor_mdp_tiago_gazebo tiago_ahold.launch # Ahold
+Singularity> roslaunch cor_mdp_tiago_gazebo tiago_festo.launch # Festo
 ```
 
 You are done!
