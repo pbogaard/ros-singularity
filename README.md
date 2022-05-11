@@ -209,7 +209,7 @@ And activate it
 Singularity> source devel/setup.bash
 ```
 
-To your project
+To launch your project
 ```
 Singularity> roslaunch cor_mdp_tiago_gazebo tiago_ahold.launch # Ahold
 Singularity> roslaunch cor_mdp_tiago_gazebo tiago_festo.launch # Festo
