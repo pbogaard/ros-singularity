@@ -72,8 +72,9 @@ We don't need the Go and Singularity source doe anymore. If you want you can del
 
 
 ## Create the Singularity image with ROS
-We don't need to create the Singularity container from scratch. Instead we can use an existing Docker image with Ubuntu 18 and ROS Melodic as input.
+We don't need to create the Singularity container from scratch. Instead we can use an existing Docker image with Ubuntu 18 and ROS Melodic as input. Create the singularity container in your home directory.
 ```
+$ cd ~
 $ sudo singularity build --sandbox melodic/ docker://osrf/ros:melodic-desktop-full
 ```
 
